@@ -1,7 +1,7 @@
 # Sprawozdanie nr 1
 Poniżej znajduje się opis zadań nr 1-3 ze sprawozdania nr 1.
 
-##Zadanie nr 1
+## Zadanie nr 1
 ### A
 Fragment kodu projektu przedstawiający wyświetlanie w logach czas i date uruchomienia, imienia i nazwiska oraz portu TCP. 
 ```
@@ -31,4 +31,24 @@ Fragment kodu projektu przedstawiający wyświetlanie na stronie adresu IP klien
 		tz = ZonedDateTime.now(ZoneId.of(timeZone1.getID())).toString();
 		return " adres IP: " + hostAddress + " timezone: " + tz;
 	}
+```
+## Zadanie nr 2
+Cała treśc pliku Dockerfile została dodana do repozytorium, włącznie z komentarzami. 
+
+## Zadanie nr 3
+### A - zbudowanie obrazu docker
+```
+docker build --tag=spr1:latest
+```
+### B - uruchomienie obrazu docker
+```
+docker run -p8080:8080 spr1:latest
+```
+### C - uzyskania informacji serwera
+```
+informacje wyswietlane sa na terminalu podczas budowania aplikacji, podczas uruchomienia  obrazu
+```
+### D - sprawdzenie ilosci warstw obrazu
+```
+docker image inspect spr1
 ```
