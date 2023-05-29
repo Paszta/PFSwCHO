@@ -32,7 +32,7 @@ Fragment kodu projektu przedstawiający wyświetlanie na stronie adresu IP klien
 		return " adres IP: " + hostAddress + " timezone: " + tz;
 	}
 ```
-<img width="960" alt="image" src="https://github.com/Paszta/PFSwCHO/assets/63753108/c0cccaa8-3a36-49f0-834c-05c7abb58d9d">
+<img width="930" alt="image" src="https://github.com/Paszta/PFSwCHO/assets/63753108/50f1e075-d9f7-4f4a-8b9f-9f096e3c428c">
 
 ## Zadanie nr 2
 Cała treśc pliku Dockerfile została dodana do repozytorium, włącznie z komentarzami. 
