@@ -15,7 +15,7 @@ RUN apt install -y openjdk-17-jre-headless
 RUN ./mvnw clean package
 
 #drugi obraz ustawiony jako runner aplikacji
-FROM openjdk:17-jdk-alpine as runner
+FROM openjdk:17-oracle as runner
 #ustawienie właściciela aplikacji
 MAINTAINER Pasztelan_Alicja
 COPY --from=builder /app/target/spr1-0.0.1-SNAPSHOT.jar /app/spr1-0.0.1-SNAPSHOT.jar 
