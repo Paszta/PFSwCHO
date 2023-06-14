@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -19,6 +20,7 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.TimeZone;
 
+
 @SpringBootApplication
 @RestController
 public class Spr1Application {
@@ -29,12 +31,13 @@ public class Spr1Application {
 
 
 	@RequestMapping("/")
-	public String home(TimeZone timeZone1) throws UnknownHostException {
+	public ResponseEntity<?> home(TimeZone timeZone1) throws UnknownHostException {
 		// adres IP odczytany z własności klasy InetAddress - metoda: getLocalHost i getHostAddress pozwala na wyciągnięcie obiektu hosta i odczytanie jego adresu IP
 		hostAddress = InetAddress.getLocalHost().getHostAddress();
 		// wyswietlenie czasu i strefy czasowej na podstawie pobranego z klasy TimeZone id strefy
 		tz = ZonedDateTime.now(ZoneId.of(timeZone1.getID())).toString();
-		return " adres IP: " + hostAddress + " timezone: " + tz;
+		String str = " adres IP: " + hostAddress + " timezone: " + tz
+		return new ResponseEntity<>(str, HttpStatus.OK);
 	}
 
 
