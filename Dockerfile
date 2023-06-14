@@ -7,7 +7,7 @@ COPY spr1/.mvn/ .mvn
 COPY spr1/mvnw spr1/pom.xml ./
 COPY spr1/src ./src
 #ustawienie uprawnień
-RUN chmod 777 mvnw
+RUN chmod +x mvnw
 #aktualizacja narzędzia zarządzania pakietami oraz instalowanie openJDK dla Jaby 17, w której napisana została aplikacja
 RUN apt update
 RUN apt install -y openjdk-17-jre-headless
