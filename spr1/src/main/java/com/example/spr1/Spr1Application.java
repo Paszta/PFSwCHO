@@ -8,6 +8,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -36,7 +37,7 @@ public class Spr1Application {
 		hostAddress = InetAddress.getLocalHost().getHostAddress();
 		// wyswietlenie czasu i strefy czasowej na podstawie pobranego z klasy TimeZone id strefy
 		tz = ZonedDateTime.now(ZoneId.of(timeZone1.getID())).toString();
-		String str = " adres IP: " + hostAddress + " timezone: " + tz
+		String str = " adres IP: " + hostAddress + " timezone: " + tz;
 		return new ResponseEntity<>(str, HttpStatus.OK);
 	}
 
